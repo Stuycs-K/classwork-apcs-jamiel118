@@ -4,8 +4,8 @@ public class MyArrays {
     for (int i = 0; i < ary.length; i++) {
       result[i] = ary[i];
     }
+    return result;
   }
-  return result;
 
   public static String aryToString(int[] nums) {
     String result = "[";
