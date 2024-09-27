@@ -6,4 +6,19 @@ public class MyArrays {
     }
   }
   return result;
+
+  public static String aryToString(int[] nums) {
+    String result = "[";
+    for (int i =0; i < nums.length; i++) {
+      result += nums[i];
+      if (i < nums.length - 1) {
+        result += ", ";
+      }
+    }
+    return result;
+  }
+
+  public static void main(String[] args) {
+
+  }
 }
