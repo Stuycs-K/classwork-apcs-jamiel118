@@ -21,7 +21,7 @@ public class MyArrays {
   public static void main(String[] args) {
     int[] firstAry = {1, 2, 3, 4, 5};
     int[] copyAry = returnCopy(firstAry);
-    System.out.print("returnCopy: arrays are the same?");
+    System.out.print("returnCopy: arrays are the same? ");
     System.out.println(firstAry == copyAry);
   }
 }
