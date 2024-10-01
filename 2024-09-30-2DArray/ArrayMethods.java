@@ -45,8 +45,8 @@ public static String arrToString(int[][]ary){
 /*Return the sum of all of the values in the 2D array */
 public static int arr2DSum(int[][]nums){
     int sum = 0;
-    for (int i = 0; i < ary.length; i++){
-        for (int j = 0; j < ary[i].length; j++) {
+    for (int i = 0; i < nums.length; i++){
+        for (int j = 0; j < nums[i].length; j++) {
             sum += nums[i][j];
         }
     }
@@ -70,13 +70,21 @@ public static int[][] swapRC(int[][]nums){
 }
   public static void main(String[] args){
     //arrToString 
-    int[][] testerary = new int[][]{{1, 2, 3}, {1}};
-    System.out.println("expected: [[1, 2, 3], [1]]  " + "result: " + arrToString(testerary));
-    testerary = new int[3][1];
-    System.out.println("expected: [[0, 0, 0], [0]]  " + "result: " + arrToString(testerary));
-    testerary = new int[][]{{1, 2}, {1, 2}};
-    System.out.println("expected: [[1, 2], [1, 2]]  " + "result: " + arrToString(testerary));
-    testerary = new int[3][];
-    System.out.println("expected: [null, null, null]  " + "result: " + arrToString(testerary));
-  }
-} 
+    int[][] testerAry = new int[][]{{1, 2, 3}, {1}};
+    System.out.println("expected: [[1, 2, 3], [1]]  " + "result: " + arrToString(testerAry));
+    testerAry = new int[3][1];
+    System.out.println("expected: [[0], [0], [0]]  " + "result: " + arrToString(testerAry));
+    testerAry = new int[][]{{1, 2}, {1, 2}};
+    System.out.println("expected: [[1, 2], [1, 2]]  " + "result: " + arrToString(testerAry));
+    testerAry = new int[3][];
+    System.out.println("expected: [null, null, null]  " + "result: " + arrToString(testerAry));
+    
+    //arr2DSum
+    int[][] testerNums = new int[][]{{1,2}, {1,2}};
+    System.out.println("expected: 6 " + "result: " + arr2DSum(testerNums));
+    testerNums = new int[3][1];
+    System.out.println("expected: 0 " + "result: " + arr2DSum(testerNums));
+    testerNums = new int[3][];
+    System.out.println("expected: 0 " + "result: " + arr2DSum(testerNums));
+    } 
+}
