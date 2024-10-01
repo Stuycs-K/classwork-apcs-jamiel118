@@ -84,7 +84,10 @@ public static int[][] swapRC(int[][]nums){
     System.out.println("expected: 6 " + "result: " + arr2DSum(testerNums));
     testerNums = new int[3][1];
     System.out.println("expected: 0 " + "result: " + arr2DSum(testerNums));
-    testerNums = new int[3][];
-    System.out.println("expected: 0 " + "result: " + arr2DSum(testerNums));
+
+    //swapRC
+    testerNums = new int[][]{{1,2,3}, {1,2,3}};
+    int[][] result = swapRC(testerNums);
+    System.out.println("expected: [[1, 1], [2, 2], [3, 3]] " + "result: " + arrToString(result));
     } 
 }
