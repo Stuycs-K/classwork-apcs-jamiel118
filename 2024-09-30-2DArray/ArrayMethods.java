@@ -29,12 +29,17 @@ public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
   String initial = "[";
   for (int i = 0; i < ary.length; i++){
-    initial += arrToString(ary[i]);
+    if (ary[i] != null) {
+        initial += arrToString(ary[i]);  
+    }
+    else {
+        initial += "null";
+    }
     if (i < ary.length - 1) {
         initial += ", ";
     }
   }
-  return initial;
+  return initial + "]";
 }
 
 /*Return the sum of all of the values in the 2D array */
@@ -64,5 +69,14 @@ public static int[][] swapRC(int[][]nums){
     return result;
 }
   public static void main(String[] args){
+    //arrToString 
+    int[][] testerary = new int[][]{{1, 2, 3}, {1}};
+    System.out.println("expected: [[1, 2, 3], [1]]  " + "result: " + arrToString(testerary));
+    testerary = new int[3][1];
+    System.out.println("expected: [[0, 0, 0], [0]]  " + "result: " + arrToString(testerary));
+    testerary = new int[][]{{1, 2}, {1, 2}};
+    System.out.println("expected: [[1, 2], [1, 2]]  " + "result: " + arrToString(testerary));
+    testerary = new int[3][];
+    System.out.println("expected: [null, null, null]  " + "result: " + arrToString(testerary));
   }
 } 
