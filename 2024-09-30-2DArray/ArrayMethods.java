@@ -81,10 +81,13 @@ public static void replaceNegative(int[][] vals){
         if (i == j) {
           vals[i][j] = 1;
         }
-        vals[i][j] = 0;
+        else {
+          vals[i][j] = 0;
+        }
       }
     }
   }
+  System.out.print(arrToString(vals));
 }
 
 //4. Make a copy of the given 2d array.
@@ -131,5 +134,13 @@ public static int[][] copy(int[][] nums){
     testerNums = new int[][]{{1,2,3}, {1,2,3}};
     int[][] result = swapRC(testerNums);
     System.out.println("expected: [[1, 1], [2, 2], [3, 3]] " + "result: " + arrToString(result));
+
+    //replaceNegative
+    int[][] vals = new int[][]{{-1,1}, {-1,2}};
+    System.out.print("expected: [[1, 1], [0, 2]]  result: ");
+    replaceNegative(vals);
+    vals = new int[][]{{-1,1,3,4,4}, {-1,-2,4}, {0}};
+    System.out.print("\nexpected: [[1, 1, 3, 4, 4], [0, 1, 4], [0]]  result: ");
+    replaceNegative(vals);
     } 
 }
