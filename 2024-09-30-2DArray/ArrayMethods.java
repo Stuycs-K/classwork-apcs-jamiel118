@@ -106,6 +106,7 @@ public static int[] copyHelper(int[] nums) {
 public static int[][] copy(int[][] nums){
   int[][] copy = new int[nums.length][];
   for (int i = 0; i < nums.length; i++) {
+    if (nums[i] != null)
     copy[i] = copyHelper(nums[i]);
   }
   return copy;
@@ -144,10 +145,13 @@ public static int[][] copy(int[][] nums){
 
     //copy
     int[][] copy = new int[3][4];
-    System.out.println("expected: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]  result: " + arrToString(copy(copy)));
+    System.out.println("\nexpected: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]  result: " + arrToString(copy(copy)));
     System.out.println("are the array addresses the same?: " + (copy == copy(copy)));
     copy = new int[][]{{1,2}, {1,2,3,4}, {1,2,3}};
     System.out.println("expected: [[1, 2], [1, 2, 3, 4], [1, 2, 3]]  result: " + arrToString(copy(copy)));
+    System.out.println("are the array addresses the same?: " + (copy == copy(copy)));
+    copy = new int[3][];
+    System.out.println("expected: [null, null, null]  result: " + arrToString(copy(copy)));
     System.out.println("are the array addresses the same?: " + (copy == copy(copy)));
     } 
 }
