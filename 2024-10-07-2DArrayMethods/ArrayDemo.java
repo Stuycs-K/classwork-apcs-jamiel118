@@ -6,6 +6,13 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    //countZeros2D
+    int[][] testerNums = new int[][]{{0, 0, 0}, {0, 0}};
+    System.out.println("expected: 5 result: " + countZeros2D(testerNums));
+    testerNums = new int[][]{{1,2,3}, {2,3,4}, {1,2}};
+    System.out.println("expected: 0 result: " + countZeros2D(testerNums));
+    testerNums = new int[][]{{1,210000000,0}, {1,2,3,4,5,6,7,8,9}};
+    System.out.println("expected: 1 result: " + countZeros2D(testerNums));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -48,7 +55,7 @@ public class ArrayDemo{
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for (int i = 0; i < nums.length; i++) {
-      for (int j = 0; j < nums[i.length; j++) {
+      for (int j = 0; j < nums[i].length; j++) {
         if (nums[i][j] == 0) {
           count ++;
         }
