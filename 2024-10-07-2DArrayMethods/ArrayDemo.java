@@ -17,6 +17,8 @@ public class ArrayDemo{
     //htmlTable 
     testerNums = new int[][]{{1,2},{3}};
     System.out.println("expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table> result: " + htmlTable(testerNums));
+    testerNums = new int[][]{{1,2},{3},{10000,400000,500000}};
+    System.out.println("expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr><tr><td>10000</td><td>400000</td><td>500000</td></tr></table> result: " + htmlTable(testerNums));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
