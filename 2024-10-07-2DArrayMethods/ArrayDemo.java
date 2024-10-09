@@ -13,6 +13,10 @@ public class ArrayDemo{
     System.out.println("expected: 0 result: " + countZeros2D(testerNums));
     testerNums = new int[][]{{1,210000000,0}, {1,2,3,4,5,6,7,8,9}};
     System.out.println("expected: 1 result: " + countZeros2D(testerNums));
+
+    //htmlTable 
+    testerNums = new int[][]{{1,2},{3}};
+    System.out.println("expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table> result: " + htmlTable(testerNums));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -139,7 +143,20 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
+
+  public static String htmlTableHelper(int[] nums) {
+    String result = "";
+    for (int i = 0; i < nums.length; i++) {
+      result = result + "<td>" + nums[i] + "</td>";
+    }
+    return result;
+  }
+
   public static String htmlTable(int[][]nums){
-    return "";
+    String table = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      table = table + "<tr>" + htmlTableHelper(nums[i]) + "</tr>";
+    }
+    return table + "</table>";
   }
 }
