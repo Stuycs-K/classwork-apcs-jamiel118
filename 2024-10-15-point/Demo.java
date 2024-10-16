@@ -23,6 +23,7 @@ public class Demo{
       System.out.println(distance(p3, origin));
       //distance method in Point
       System.out.println( Point.distance(p1,p2));
+      System.out.println(Point.distance(p4, origin));
       //distanceTo non-static method
       System.out.println(p3.distanceTo(origin));
       System.out.println( p1.distanceTo(p2));
