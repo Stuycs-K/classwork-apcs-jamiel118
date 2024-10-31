@@ -6,9 +6,13 @@ public class TriangleTester.java {
 
   Scanner sc = new Scanner("inputTri.txt");
 
-  public static boolean helper(String filename) {
-    while()
-
+  public static boolean helper(String input) {
+    int[] ary = new int[3];
+    int count = 3;
+    for (int i = 0; i < count; i++) {
+      ary[i] = input.nextInt();
+    }
+    return (ary[0] + ary[1] <= ary[2] || ary[0] + ary[2] <= ary[1] || ary[1] + ary[2] <= ary[0] )
   }
 
   public static int countTrianglesA(String filename) {
