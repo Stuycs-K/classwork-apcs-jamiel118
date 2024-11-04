@@ -8,10 +8,8 @@ public class TriangleTester {
   public static boolean helper(String input) {
     Scanner sc = new Scanner(input);
     int[] ary = new int[3];
-    int count = 0;
-    while(sc.hasNextInt()) {
-      ary[count] = sc.nextInt();
-      count++;
+    for (int i = 0; i < 3; i++) {
+      ary[i] = sc.nextInt();
     }
     return (ary[0] + ary[1] > ary[2] && 
             ary[0] + ary[2] > ary[1] && 
