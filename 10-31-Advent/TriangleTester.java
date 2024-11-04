@@ -33,6 +33,7 @@ public class TriangleTester {
 
     } catch (FileNotFoundException ex) {
       System.out.println("File not found");
+      System.exit(1);
     }
     return counter; 
   }
