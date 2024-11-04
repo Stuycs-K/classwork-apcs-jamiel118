@@ -31,9 +31,43 @@ public class TriangleTester {
 
     } catch (FileNotFoundException ex) {
       System.out.println("File not found");
-      System.exit(1);
+    }
+    return counter; 
+  }
+
+  public static int helper2 (int[][]ary) {
+    int counter = 0; 
+    for (int i = 0; i < 3; i++) {
+      if (ary[0][i] + ary[1][i] > ary[2][i] && 
+          ary[0][i] + ary[2][i] > ary[1][i] && 
+          ary[1][i] + ary[2][i] > ary[0][i]) {
+            counter++;
+          }
     }
     return counter; 
   }
   
+  public static int countTrianglesB(String filename) {
+    int counter = 0;
+    try {
+      File file = new File(filename);
+      Scanner sc = new Scanner(file);
+      while (sc.hasNextLine()) {
+        int[][] ary = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+          Scanner newLine = new Scanner(sc.nextLine()); 
+          for (int j = 0; j < 3; j++) {
+            ary[i][j] = newLine.nextInt();
+          }
+        }
+        counter += helper2(ary);
+      }
+      sc.close();
+
+    } catch (FileNotFoundException ex) {
+      System.out.println("File not found");
+      System.exit(1);
+    }
+    return counter; 
+  }
 }
