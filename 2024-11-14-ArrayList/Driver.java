@@ -13,6 +13,12 @@ public class Driver{
 
     ArrayList<String> c = ArrayListPractice.makeReversedList(b);
     System.out.println(c);
-
+    
+    ArrayList<String> d = ArrayListPractice.createRandomArray(5);
+    System.out.println(d);
+    ArrayList<String> e = ArrayListPractice.createRandomArray(2);
+    System.out.println(e);
+    ArrayList<String> test = ArrayListPractice.mixLists(d,e);
+    System.out.println(test);
   }
 }
