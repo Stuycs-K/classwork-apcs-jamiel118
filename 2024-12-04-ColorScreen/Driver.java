@@ -2,10 +2,11 @@ import java.util.Random;
 
 public class Driver{
 
-    public static void border(int color) {
+    public static void border() {
         System.out.print(Text.CLEAR_SCREEN + Text.HIDE_CURSOR);
-        Text.color(Text.background(color));
+        int color = Text.RED;
         for (int i = 0; i < 30; i++) {
+            Text.color(Text.background(color + i%8));
             if (i == 0 || i == 29) {
                 Text.go(i+1, 1);
                 for (int j = 0; j < 80; j++) {
@@ -30,8 +31,28 @@ public class Driver{
         return result;
     }
 
+    public static void printInt() {
+        System.out.println(Text.HIDE_CURSOR);
+        int[] ary = random3();
+        for (int i = 0; i < ary.length; i++) {
+            if (ary[i] < 25) {
+                Text.color(Text.RED);
+            }
+            else if (ary[i] > 75) {
+                Text.color(Text.GREEN);
+            } else {
+                Text.color(Text.WHITE);
+            }
+            Text.go(1,20 * (i+1));
+            System.out.print(ary[i]);
+        }
+    }
+
     public static void main(String[] args) {
-        border(Text.CYAN);
+        border();
+        System.out.println(Text.RESET);
+        printInt();
+        Text.go(31, 1);
         System.out.println(Text.RESET);
     }
 }
