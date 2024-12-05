@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Driver{
 
     public static void border(int color) {
@@ -16,6 +18,16 @@ public class Driver{
                 System.out.print(".");
             }
         }
+    }
+
+    public static int[] random3() {
+        int[] result = new int[3];
+        Random random = new Random();
+        for (int i = 0; i < result.length; i++) {
+            int randomNumber = random.nextInt(100);
+            result[i] = randomNumber;
+        }
+        return result;
     }
 
     public static void main(String[] args) {
