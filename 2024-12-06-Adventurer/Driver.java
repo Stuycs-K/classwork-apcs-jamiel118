@@ -5,13 +5,22 @@ public class Driver {
         System.out.println(a.getSpecialName());
         System.out.println(a.getSpecial());
         System.out.println(a.getSpecialMax());
-        
-        Adventurer b = new Thief("Elon",30);
+
+        Adventurer b = new Thief("Elon",3);
         System.out.println("\nThief Elon");
         System.out.println(b.getSpecialName());
         System.out.println(b.getSpecial());
         System.out.println(b.getSpecialMax());
 
+        System.out.println("\n" + a.attack(b));
+        System.out.println(b.getHP());
+        System.out.println(a.specialAttack(b));
+        System.out.println(b.getHP());
+        System.out.println("Special count: " + a.getSpecial());
 
+        a.setSpecial(4000);
+        System.out.println(a.getSpecial());
+        a.setSpecial(25);
+        System.out.println(a.getSpecial());
     }
 }
