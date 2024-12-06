@@ -18,8 +18,17 @@ public class Driver {
         System.out.println(b.getHP());
         System.out.println("Special count: " + a.getSpecial());
 
+        System.out.println("\n" + a.support(b));
+        System.out.println(b.getHP());
+        System.out.println(a.support(b));
+        System.out.println(b.getHP());
+        System.out.println(a.support(b));
+        System.out.println(b.getHP());
+        System.out.println(a.support(b));
+        System.out.println(b.getHP());
+
         a.setSpecial(4000);
-        System.out.println(a.getSpecial());
+        System.out.println("\n" + a.getSpecial());
         a.setSpecial(25);
         System.out.println(a.getSpecial());
     }
