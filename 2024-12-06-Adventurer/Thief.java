@@ -1,6 +1,6 @@
 public class Thief extends Adventurer{
   private String specialName = "wit";
-  private int specialMax, special = 30;
+  private int specialMax = 30, special = 30;
 
   //Constructors
   public Thief(String name) {
@@ -20,6 +20,7 @@ public class Thief extends Adventurer{
      return special;
    }
    public void setSpecial(int n) {
+    if (n >= 0 && n <= getSpecialMax()) 
      special = n;
    }
    public int getSpecialMax() {
@@ -31,10 +32,10 @@ public class Thief extends Adventurer{
     String result = "";
     if (other.getHP() > 0) {
       other.setHP(other.getHP() - 1);
-      result += other.getName() + " lost 1 health\n";
+      result += other.getName() + " lost 1 health";
     }
     if (other.getHP() == 0) {
-      result += other.getName() + " is dead";
+      result += "\n" + other.getName() + " is dead";
     }
     return result;
   }
@@ -63,13 +64,13 @@ public class Thief extends Adventurer{
     if (other.getHP() > 0 && getSpecial() > 0) {
       other.setHP(other.getHP() - 2);
       setSpecial(getSpecial() - 1);
-      result += other.getName() + " lost 2 health, you have " + getSpecial() + getSpecialName() + " points left\n";
+      result += other.getName() + " lost 2 health, you have " + getSpecial() + " " + getSpecialName() + " points left";
     }
     else if (getSpecial() == 0) {
       result += "Not enought" + getSpecialName() + " points";
     }
     if (other.getHP() == 0) {
-      result += other.getName() + " is dead";
+      result += "\n" + other.getName() + " is dead";
     }
     return result;
   }
