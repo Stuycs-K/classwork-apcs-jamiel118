@@ -19,7 +19,7 @@ public class Thief extends Adventurer{
    public int getSpecial() {
      return special;
    }
-   public void setSpecial(int n); {
+   public void setSpecial(int n) {
      special = n;
    }
    public int getSpecialMax() {
@@ -28,16 +28,18 @@ public class Thief extends Adventurer{
 
    //hurt or hinder the target adventurer
   public String attack(Adventurer other) {
+    String result = "";
     if (other.getHP() > 0) {
       other.setHP(other.getHP() - 1);
-      return other.getName() + " lost 1 health";
+      result += other.getName() + " lost 1 health\n";
     }
     if (other.getHP() == 0) {
-      return other.getName() + " is dead";
+      result += other.getName() + " is dead";
     }
+    return result;
   }
 
-  //heall or buff the target adventurer
+  //heal or buff the target adventurer
   public String support(Adventurer other) {
     if (other.getHP() != other.getmaxHP()) {
       other.setHP(other.getHP() + 1);
@@ -46,7 +48,7 @@ public class Thief extends Adventurer{
     return other.getName() + " is at max health";
   }
 
-  //heall or buff self
+  //heal or buff self
   public String support() {
     if (getHP() != getmaxHP()) {
       setHP(getHP() + 1);
@@ -57,17 +59,19 @@ public class Thief extends Adventurer{
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
+    String result = "";
     if (other.getHP() > 0 && getSpecial() > 0) {
       other.setHP(other.getHP() - 2);
       setSpecial(getSpecial() - 1);
-      return other.getName() + " lost 2 health, you have " + getSpecial() + getSpecialName() + " points left";
+      result += other.getName() + " lost 2 health, you have " + getSpecial() + getSpecialName() + " points left\n";
+    }
+    else if (getSpecial() == 0) {
+      result += "Not enought" + getSpecialName() + " points";
     }
     if (other.getHP() == 0) {
-      return other.getName() + " is dead";
+      result += other.getName() + " is dead";
     }
-    if (getSpecial() == 0) {
-      return "Not enought" + getSpecialName() + " points"
-    }
+    return result;
   }
 
 }
