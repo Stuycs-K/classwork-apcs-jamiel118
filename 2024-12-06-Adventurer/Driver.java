@@ -5,12 +5,12 @@ public class Driver {
         System.out.println(a.getSpecialName());
         System.out.println(a.getSpecial());
         System.out.println(a.getSpecialMax());
-
+        
         Adventurer b = new Thief("Elon",30);
         System.out.println("\nThief Elon");
-        System.out.println(a.getSpecialName());
-        System.out.println(a.getSpecial());
-        System.out.println(a.getSpecialMax());
+        System.out.println(b.getSpecialName());
+        System.out.println(b.getSpecial());
+        System.out.println(b.getSpecialMax());
 
 
     }
