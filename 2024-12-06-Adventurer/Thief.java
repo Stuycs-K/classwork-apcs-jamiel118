@@ -69,7 +69,7 @@ public class Thief extends Adventurer{
     else if (getSpecial() == 0) {
       result += "Not enought" + getSpecialName() + " points";
     }
-    if (other.getHP() == 0) {
+    if (other.getHP() <= 0) {
       result += "\n" + other.getName() + " is dead";
     }
     return result;
